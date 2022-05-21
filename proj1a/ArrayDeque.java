@@ -151,16 +151,36 @@ public class ArrayDeque<T> {
 
     public T get(int index) {
         int target = nextFirst + 1 + index;
+        if (target > nextFirst + size) {
+            return null;
+        }
         if (target > items.length - 1) {
             target -= items.length;
-            if (target >= nextLast) {
-                return null;
-            }
-
         }
         return items[target];
     }
 
+ /*   public static void main(String[] args){
+        ArrayDeque<Integer> a = new ArrayDeque<>();
+        a.addFirst(0);
+        System.out.println(a.get(0));     // ==> 0
+        a.addFirst(2);
+        a.addLast(3);
+        a.addLast(4);
+        System.out.println(a.removeFirst());   // ==> 2
+        a.addLast(6);
+        a.addLast(7);
+        System.out.println(a.removeFirst());     //==> 0
+        a.addLast(9);
+        a.addFirst(10);
+        System.out.println(a.get(3));      //==> 6
+        a.addLast(12);
+        System.out.println(a.removeLast());     //==> 12
+        a.addLast(14);
+        System.out.println(a.get(0));      //==> 10
+        a.addLast(16);
+        System.out.println(a.get(2));      //==> null
+    }*/
 /*    public static void main(String[] args){
         ArrayDeque<Character> a = new ArrayDeque<>();
         a.addLast('a');

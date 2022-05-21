@@ -35,7 +35,6 @@ public class LinkedListDeque<T> {
         sentinel.next = newNode;
         size += 1;
     }
-
     public void addLast(T item) {
         Node<T> newNode = new Node<>(item, sentinel, sentinel.prev);
         sentinel.prev.next = newNode;
@@ -64,7 +63,6 @@ public class LinkedListDeque<T> {
         sentinel.prev = sentinel.prev.prev;
         return x;
     }
-
     public T get(int index) {
         if (index >= size) {
             return null;
