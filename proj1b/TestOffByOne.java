@@ -13,8 +13,16 @@ public class TestOffByOne {
         boolean exp = true;
         assertEquals(exp, act);
 
-        boolean act2 = offByOne.equalChars('a', 'e');
-        boolean exp2 = false;
+        boolean act3 = offByOne.equalChars('q', 'r');
+        boolean exp3 = true;
+        assertEquals(exp3, act3);
+
+        boolean act2 = offByOne.equalChars('&', '%');
+        boolean exp2 = true;
         assertEquals(exp2, act2);
+
+        boolean act4 = offByOne.equalChars('A', 'B');
+        boolean exp4 = true;
+        assertEquals(exp4, act4);
     }
 }
