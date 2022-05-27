@@ -3,8 +3,7 @@ public class OffByN implements CharacterComparator {
 
     @Override
     public boolean equalChars(char x, char y) {
-        int diff = x - y;
-        return Math.abs(diff) == N;
+        return Math.abs(x - y) == N;
     }
 
     public OffByN(int N) {
