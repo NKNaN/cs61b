@@ -25,6 +25,7 @@ public class GuitarHeroLite {
         /* compute the superposition of samples */
             double sample = stringA.sample() + stringC.sample();
 
+            System.out.println(sample);
         /* play the sample on standard audio */
             StdAudio.play(sample);
 
