@@ -4,6 +4,78 @@ import org.junit.Test;
 /** Tests by Brendan Hu, Spring 2015, revised for 2016 by Josh Hug */
 public class TestBSTMap {
 
+    @Test
+    public void myTest4() {
+        BSTMap<Integer, String> b = new BSTMap<>();
+        b.put(5, "abc");
+        b.put(2, "hello");
+        b.put(6, "yes");
+        b.put(1, "no");
+        b.put(4, "java");
+        b.put(3, "c");
+        System.out.println(b.keySet());
+    }
+
+    @Test
+    public void myTest3() {
+        BSTMap<Integer, String> b = new BSTMap<>();
+        b.put(5, "abc");
+        b.put(2, "hello");
+        b.put(6, "yes");
+        b.put(1, "no");
+        b.put(4, "java");
+        b.put(3, "c");
+        b.printInOrder();
+
+        System.out.println(b.remove(3));
+        b.put(3, "c");
+
+        System.out.println(b.remove(4));
+        b = new BSTMap<>();
+        b.put(5, "abc");
+        b.put(2, "hello");
+        b.put(6, "yes");
+        b.put(1, "no");
+        b.put(4, "java");
+        b.put(3, "c");
+
+        System.out.println(b.remove(2));
+    }
+
+    @Test
+    public void myTest2() {
+        BSTMap<Integer, String> b = new BSTMap<>();
+        b.put(5, "abc");
+        b.put(2, "hello");
+        b.put(6, "yes");
+        b.put(1, "no");
+        b.put(4, "java");
+        b.put(3, "c");
+        b.printInOrder();
+        for (int key : b) {
+            System.out.println(key);
+        }
+        BSTMap<Integer, String> a = new BSTMap<>();
+        a.put(10, "abc");
+        a.put(5, "hello");
+        a.put(6, "yes");
+        a.put(7, "no");
+        a.put(8, "java");
+        a.printInOrder();
+        for (int key : a) {
+            System.out.println(key);
+        }
+    }
+    @Test
+    public void myTest() {
+        BSTMap<Integer, String> b = new BSTMap<>();
+        b.put(5, "abc");
+        b.put(3, "hello");
+        b.put(10, "yes");
+        b.printInOrder();
+        b.put(10, "no");
+        b.printInOrder();
+    }
 	@Test
     public void sanityGenericsTest() {
     	try {
@@ -26,6 +98,7 @@ public class TestBSTMap {
             assertTrue( null != b.get("hi" + i) && (b.get("hi"+i).equals(1+i))
                         && b.containsKey("hi" + i));
         }
+        b.printInOrder();
         assertEquals(455, b.size());
         b.clear();
         assertEquals(0, b.size());
