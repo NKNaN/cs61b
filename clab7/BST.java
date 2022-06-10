@@ -67,6 +67,33 @@ public class BST<Key extends Comparable<Key>> {
     }
 
 
+    public double averageDepth() {
+        return sumDepth(root) / size(root);
+    }
+
+    private double sumDepth(Node x) {
+        if (x == null) {
+            return 0;
+        } else {
+            return sumDepth(x.left) + sumDepth(x.right) + depth(x);
+        }
+    }
+
+    private int depth(Node x) {
+        Node p = root;
+        int depth = 0;
+        int cmp = x.key.compareTo(p.key);
+        while (cmp != 0) {
+            if (cmp < 0) {
+                p = p.left;
+            } else {
+                p = p.right;
+            }
+            depth++;
+            cmp = x.key.compareTo(p.key);
+        }
+        return depth;
+    }
     /** Private methods and variables follow. There's no need to read
      *  any of this.
      */
@@ -246,4 +273,18 @@ public class BST<Key extends Comparable<Key>> {
     private boolean isEmpty() {
         return size() == 0;
     }
+
+//    public static void main(String[] args) {
+//        BST<Integer> b = new BST<>();
+//        System.out.println(b.averageDepth());
+//        b.add(3);
+//        System.out.println(b.averageDepth());
+//        b.add(2);
+//        System.out.println(b.averageDepth());
+//        b.add(5);
+//        System.out.println(b.averageDepth());
+//        b.add(1);
+//        b.add(4);
+//        System.out.println(b.averageDepth());
+//    }
 }
