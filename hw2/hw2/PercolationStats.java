@@ -49,11 +49,11 @@ public class PercolationStats {
         return mean() + 1.96 * stddev() / Math.sqrt(t);
     }
 
-/*    public static void main(String[] arg) {
-        PercolationStats p = new PercolationStats(20, 50, new PercolationFactory());
+    public static void main(String[] arg) {
+/*        PercolationStats p = new PercolationStats(20, 50, new PercolationFactory());
         System.out.println(p.mean());
         System.out.println(p.stddev());
         System.out.println(p.confidenceLow());
-        System.out.println(p.confidenceHigh());
-    }*/
+        System.out.println(p.confidenceHigh());*/
+    }
 }

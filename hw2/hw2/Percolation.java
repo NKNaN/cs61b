@@ -95,9 +95,8 @@ public class Percolation {
             }
         }
     }
-/*
     public static void main(String[] args) {
-        Percolation p = new Percolation(4);
+/*        Percolation p = new Percolation(4);
         System.out.println(p.numberOfOpenSites()); // 0
         System.out.println(p.isFull(1,3)); // f
         System.out.println(p.isOpen(1,3)); // f
@@ -130,7 +129,6 @@ public class Percolation {
         System.out.println("--------------------\n");
         p.open(3,2);
         System.out.println(p.numberOfOpenSites()); // 5
-        System.out.println(p.percolates()); // t
+        System.out.println(p.percolates()); // t*/
     }
-*/
 }
