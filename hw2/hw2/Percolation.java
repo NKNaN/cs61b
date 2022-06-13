@@ -88,6 +88,7 @@ public class Percolation {
                 if (x >= 0 && x < N && y >= 0 && y < N) {
                     if (isOpen(x, y)) {
                         grids1DTop.union(xyTo1D(x, y), xyTo1D(row, col));
+                        grids1DBottom.union(xyTo1D(x, y), xyTo1D(row, col));
                     }
                 }
             }
