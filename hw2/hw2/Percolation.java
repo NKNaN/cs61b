@@ -41,7 +41,8 @@ public class Percolation {
         connectSurroundingOpenSite(row, col);
         if (row == 0) {
             grids1DTop.union(top, xyTo1D(row, col));
-        } else if (row == grids.length - 1) {
+        }
+        if (row == grids.length - 1) {
             grids1DBottom.union(bottom, xyTo1D(row, col));
         }
         if (isFull(row, col) && grids1DBottom.connected(bottom, xyTo1D(row, col))) {
